@@ -1,0 +1,138 @@
+.main{   
+    .section-introductory{
+        padding-top: calc(28px + (94 - 28) * ((100vw - 320px) / (1200 - 320)));
+        &__title-text{
+            font-weight: bold;
+            @include adaptiv-font(48,24);
+            line-height: $line-height;
+            color:$body-secondary-text-color;
+        }
+        .title-text{
+            @include adaptiv-font(36,22);
+            color:inherit;
+        }
+        &__text{
+            @include adaptiv-font(18,16);
+            line-height: $line-height;
+            padding-top: 20px;
+            color: $body-primary-text-color;
+        }
+        &__text-under-paragraph{
+            font-weight: 500;
+            @include adaptiv-font(18,16);
+            line-height: $line-height;
+            padding-top: 13px;
+            color: $body-secondary-text-color;
+            display: block;
+        }
+        &__btn{
+            @include style-primary-btn;
+            padding: 12px 0px;
+            width: 100%;
+            margin-top: 30px;
+        }
+        &__with-img{
+            background-image: url("../img/main/section-introductory-img.jpg");
+            @include style-BG;
+            min-width: 256px;
+            min-height: 247px;
+        }
+    }
+    .section-why-we{
+        margin-top: 40px;
+    &__background{
+        background-image: url("../img/main/background-section-why-we.png");
+        @include style-BG;
+    }
+    &__title-text{
+        @include style-text-titel;
+        @include adaptiv-font(24,20);
+        padding-bottom: calc(32px + (75 - 32) * ((100vw - 320px) / (1200 - 320)));
+    }
+    &__block-with-all-cause{
+
+    }
+    &__block-cause{
+        display: grid;
+        grid-template-columns: calc(48px + (80 - 48) * ((100vw - 320px) / (1200 - 320))) 1fr;
+        align-items: center;
+        gap:  calc(16px + (0 - 16) * ((100vw - 320px) / (1200 - 320)));
+        padding-bottom: 19px
+    }
+    &__icon{
+        max-width: calc(48px + (80 - 48) * ((100vw - 320px) / (1200 - 320)));
+        max-height: calc(48px + (80 - 48) * ((100vw - 320px) / (1200 - 320))); 
+    }
+    &__text{
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1200 - 320)));
+        line-height: 171%;
+        color: $body-primary-text-color;
+    }
+    }
+    @include phone{
+        .section-why-we{
+            margin-top: 40px;
+        &__background{
+            background-image: url("../img/main/background-section-why-we.png");
+            @include style-BG;
+            background-position: 80% 20px;
+        }
+    }
+    }
+    @include tablet{
+        .section-introductory{
+            &__interior-block{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: 1fr 78px;
+            }
+        }
+        .section-why-we{
+            text-align: center;
+        &__block-with-all-cause{
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+          grid-template-rows: repeat(2,1fr);
+          column-gap: calc(2px + (160 - 2) * ((100vw - 320px) / (1200 - 320)));
+          row-gap: calc(10px + (87 - 10) * ((100vw - 320px) / (1200 - 320)));
+        }
+        &__block-cause{
+           display: grid;
+           grid-template-columns: 1fr;
+           grid-template-rows: repeat(2,1fr);
+           text-align: center;
+        }
+        }
+    }
+    @include desktop{
+        .section-introductory{
+            &__interior-block{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: minmax(340px,400px) 78px;
+            }
+            &__btn{
+               max-width: 328px;
+            }
+            &__with-img{
+                height: 420px;
+            }
+        }
+        .section-why-we{
+            text-align: center;
+            &__block-with-all-cause{
+              display: grid;
+              grid-template-columns: repeat(3,1fr);
+              grid-template-rows: repeat(2,1fr);
+              column-gap: calc(2px + (160 - 2) * ((100vw - 320px) / (1200 - 320)));
+              row-gap: calc(10px + (87 - 10) * ((100vw - 320px) / (1200 - 320)));
+            }
+            &__block-cause{
+               display: grid;
+               grid-template-columns: 1fr;
+               grid-template-rows: repeat(2,1fr);
+               text-align: center;
+            }
+            }
+    }
+}

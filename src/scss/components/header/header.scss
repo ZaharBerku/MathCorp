@@ -1,0 +1,168 @@
+.header{
+    .section-navigation{
+        padding-top: 26px;
+        &__wrapper{
+        @include flex-container;
+        justify-content: space-between;
+        }
+        &__logo{
+        min-width: 42px;
+        min-height: 23px;
+        display: inline-block;
+        background-image: url('../img/header/logo.svg');
+        @include style-BG;
+        z-index: 1;
+        }
+        &__link{            
+           @include style-link;
+           color: $body-primary-text-color;
+        }
+        &__btn-menu{
+            @include style-primary-btn;
+            width: 100%;
+            height: 48px;
+            font-size: 18px;
+        }
+        &__btn-burger{
+            width: 24px;
+            height: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        &__btn-burger::before,
+            &__btn-burger::after,
+            &__burger-menu-line{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1.3px;
+                border-radius:4px;
+                background-color: black;
+                position: absolute;
+                transition: all .2s ease;
+            }
+            &__btn-burger::before{
+                top: 7px;
+                transform: rotate(-45deg);
+            }
+            &__btn-burger::after{
+                top: 7px;
+                transform: rotate(45deg);
+            }
+            &__burger-menu-line{
+                transform: scale(0);
+            }
+            .btn-burger::after{
+                top: 14px;
+                transform: rotate(0deg);
+            }
+            .btn-burger::before{
+                top: 7px;
+                transform: rotate(-0deg);
+            }
+            .burger-menu-line{
+                transform: scale(1);
+                height: 2px;
+            }
+            &__lang{
+               display: none;
+            }
+            
+            
+    }
+    @include phone{
+        .section-navigation{
+            &__navigation-menu{
+                position: absolute;
+                background-color: #DEF2FF;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                padding: 0px 25px;
+                transform: translate(0%,0px);
+                transition: 500ms;
+            }
+            .navigation-menu{
+                transform: translate(-100%,0px);
+            }
+            &__list{
+                margin-top: 90px;
+            }
+            &__item:not(:last-child){
+            margin-bottom: 20px;
+            }
+            &__btn-menu{
+                margin-top: 40px;
+            }     
+        }
+        
+    }
+    @include tablet{
+            .section-navigation{
+                &__navigation-menu{
+                    position: absolute;
+                    background-color: #DEF2FF;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    padding: 0px 25px;
+                    transform: translate(0%,0px);
+                    transition: 500ms;
+                }
+                .navigation-menu{
+                    transform: translate(-100%,0px);
+                }
+                &__list{
+                    margin-top: 90px;
+                }
+                &__item:not(:last-child){
+                margin-bottom: 20px;
+                }
+                &__btn-menu{
+                    margin-top: 40px;
+                }     
+            }
+    }
+    @include desktop{
+        .section-navigation{
+            box-shadow: 0px 3px 3px #E8F3FC;
+            padding-bottom: 25px;
+            &__btn-burger{
+               display: none;
+            }
+            &__logo{
+              background-image: url('../img/header/desktop/logo-desk.svg');
+              min-width: 61px;
+              min-height: 34px;
+            }
+            &__navigation-menu{
+                @include flex-container;
+            }
+            &__navigation-menu{
+                @include flex-container;
+            }
+            &__list{
+                @include flex-container;
+                gap: calc(12px + (60 - 12) * ((100vw - 320px) / (1200 - 320)));
+            }
+            &__btn-menu{
+                @include style-primary-btn;
+                max-width: 284px;
+                padding: 0 90px;
+                height: 40px;
+                margin-left: 61px;
+            }
+            &__lang{
+                border: none;
+                width: 40px;
+                height: 20px;
+                color: $body-tretiary-color;
+                @include style-link;
+                margin-left: 101px;
+                display: block;
+            }
+        } 
+    }
+}
