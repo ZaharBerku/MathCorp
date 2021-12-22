@@ -7,3 +7,9 @@
     padding: 0px 24px;
     margin: 0 auto;
 }
+body{
+    overflow: hidden; 
+}
+.stop-scroll{
+    overflow: visible;
+}
