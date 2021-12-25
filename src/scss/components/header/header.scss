@@ -18,14 +18,17 @@
            color: $body-primary-text-color;
         }
         &__block-btn-menu{
-            text-align: center;
+            text-align: left;
         }
         &__btn-menu{
             @include style-primary-btn;
-            max-width: 328px;
-            width: 100%;
-            height: 48px;
-            font-size: 18px; 
+            font-size: 18px;
+            &:hover{
+                box-shadow: 0px 4px 4px rgba(118, 184, 238, 0.53);
+            }
+            &:active{
+                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
         }
         &__btn-burger{
             width: 24px;

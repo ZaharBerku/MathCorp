@@ -32,9 +32,13 @@
         &__btn{
             @include style-primary-btn;
             padding: 12px 0px;
-            width: 100%;
-            max-width: 328px;
             margin-top: 30px;
+            &:hover{
+                box-shadow: 0px 4px 4px rgba(118, 184, 238, 0.53);
+            }
+            &:active{
+                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
         }
         &__with-img{
             background-image: url("../img/main/section-introductory-img.jpg");
@@ -100,11 +104,14 @@
             text-align: center;
         }
         &__btn{
-            max-width: 328px;
-            width: 100%;
-            height: 48px;
             @include style-primary-btn;
             margin-top: adaptiv-indentation(21, 26, 320);
+            &:hover{
+                box-shadow: 0px 4px 4px rgba(118, 184, 238, 0.53);
+            }
+            &:active{
+                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
         }
         &__dotted-line{
         display: none;
@@ -125,6 +132,65 @@
               }
         }
     }
+    .section-with-prices{
+        padding-top: adaptiv-indentation(50, 64, 320);
+        &__title-text{
+            @include style-text-titel;
+        }
+        &__under-text{
+            @include adaptiv-font(18,14);
+            line-height: $line-height;
+            color: $body-secondary-text-color;
+            padding-top: adaptiv-indentation(11, 16, 320);
+            padding-bottom: adaptiv-indentation(39, 53, 320);
+        }
+        &__block-prices{
+            @include flex-container;
+            flex-wrap: wrap;
+            gap: adaptiv-indentation(25, 40, 320);
+        }
+       
+        .block-price {
+            box-shadow: 0px 2px 10px rgba(39, 49, 230, 0.2);
+            border-radius: 10px;
+            @include flex-container;
+            flex-direction: column;
+            padding: 27px adaptiv-indentation(10, 23, 320) 30px;
+            &__img{
+                max-width: 258px;
+                min-height: 209px;
+            }
+            &__thing{
+                font-weight: 500;
+                line-height: 119%;
+                padding: 8px 0px adaptiv-indentation(8, 13, 320);
+            }
+            &__price{
+                font-weight: 600;
+                @include adaptiv-font(16,20);
+                line-height: 119%;
+                padding-bottom:adaptiv-indentation(18, 27, 320);
+            }
+            &__btn{
+               @include style-primary-btn;
+               @include adaptiv-font(14.5,12);
+               line-height: 124%;
+               border-radius: 5px;
+               min-width: adaptiv-indentation(265, 295, 320);
+               height: adaptiv-indentation(31, 37, 320);
+               &:hover{
+                box-shadow: 0px 4px 4px rgba(118, 184, 238, 0.53);
+               }
+               &:active{
+                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+               }
+            }
+        }
+        .block-price--height{
+            min-height: 373px;
+            justify-content: space-between;
+        }
+    }
     @include phone{
         .section-why-we{
             margin-top: 40px;
@@ -132,6 +198,13 @@
             background-image: url("../img/main/background-section-why-we.png");
             @include style-BG;
             background-position: 80% 20px;
+            
+        }
+        .section-with-prices{
+            &__btn{
+                max-width: 309px;
+                height: 31px;
+             } 
         }
     }
     }
@@ -163,10 +236,11 @@
         }
         }
         .section-info-join{
+            background-color: #DEF2FF;
             &__wrapper{
                margin-top: 35px;
-               background-color: #DEF2FF;
                text-align: center;
+               padding-bottom: adaptiv-indentation(0, 53, 375);
             }
             &__block-with-description-actions {
                 display: flex;
@@ -206,6 +280,13 @@
                max-height: adaptiv-indentation(126, 165, 320);
             }
         }
+        .section-with-prices{
+            text-align: center;
+            &__under-text{
+                max-width: 393px;
+                margin: 0 auto;
+                }
+        }
     }
     @include desktop{
         .section-introductory{
@@ -242,9 +323,10 @@
             }
         .section-info-join{
             background-color: #DEF2FF;
-            &__wrapper{
+            &__wrapper{ 
                margin-top: 35px;
                text-align: center;
+               padding-bottom: adaptiv-indentation(0, 53, 375);
             }
             &__block-with-description-actions {
                 display: flex;
@@ -293,6 +375,13 @@
                 max-width: adaptiv-indentation(998, 1200, 993);
                max-height: adaptiv-indentation(281, 350, 993);
             }
+        }
+        .section-with-prices{
+            text-align: center;
+            &__under-text{
+                max-width: 393px;
+                margin: 0 auto;
+                }
         }
     }
 }

@@ -1,15 +1,8 @@
 @mixin style-text-titel {
     font-weight: bold;
     font-size: 20px;
-    line-height: 135%;
+    line-height: $line-height;
     color: $body-secondary-text-color;
-}
-@mixin style-primary-btn {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 135%;
-    border-radius: 8px;
-    color: $body-primary-btn-color;
 }
 @mixin flex-container {
     display: flex;
@@ -23,6 +16,11 @@
     font-size: 18px;
     line-height: $line-height;
     border-radius: 8px;
+    transition: 300ms;
+    max-width: 328px;
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
 }
 @mixin style-link {
     font-size: 16px;
