@@ -55,7 +55,6 @@
     }
     &__title-text{
         @include style-text-titel;
-        @include adaptiv-font(24,20);
         padding-bottom: adaptiv-indentation(32, 75, 320);
     }
     &__block-cause{
@@ -191,6 +190,95 @@
             justify-content: space-between;
         }
     }
+    .section-our-teachers{
+        &__wrapper{
+
+        }
+        &__title-text{
+            @include style-text-titel;
+            padding-top: adaptiv-indentation(40, 65, 320);
+            padding-bottom: adaptiv-indentation(26, 45, 320);
+        }
+        &__blocks-with-info-teacher{
+            @include flex-container;
+            flex-wrap: wrap;
+            gap: 26px;
+            position: relative;
+        }
+        &__block-about-teacher:not(:first-child){
+            position: absolute;
+            opacity: 0;
+        }
+        .block-about-teacher--active{
+            position: static;
+            opacity: 1;
+        }
+        .block-about-teacher{
+            background-color: #F4F4FD;
+            box-shadow: 0px 2px 10px rgba(39, 49, 230, 0.2);
+            padding: 16px 15px 24px;
+            max-width: 328px;
+            min-height: 364px;
+            transition: 800ms;
+            & *{
+                margin-bottom: 2px;
+            }
+        &__img-teacher{
+            width: 100%;
+            max-width: 297px;
+            max-height: 193px;
+            margin-bottom: 24px;
+        }
+        &__name{
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 121%;
+            color: $body-tretiary-color;
+        }
+        &__grade{
+            background-image: url("../img/main/asterisks.svg");
+            @include style-BG;
+            height: 12px;
+            width: 71px;
+            display: block;
+        }
+        &__basic-info{
+            display: grid;
+            grid-template-columns:  1fr 5fr;
+            justify-items: start;
+            column-gap: 10px;
+        }
+        &__info{
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 125%;
+            color: $body-primary-text-color;
+        }
+        &__experience{
+            font-size: 14px;
+            line-height: 121%;
+            color: $body-primary-text-color;
+        }
+        
+        }
+        &__block-btn-teacher{
+            text-align: right;
+        }
+        &__btn-teacher{
+            padding-bottom: 4.5px;
+            border-bottom: 1px solid #084D5B;
+            font-size: 14px;
+            line-height: 24px;
+            color: #084D5B;
+            margin-top: 26px;
+            cursor: pointer;
+            display: none;
+        }
+        .btn-teacher--show{
+            display: inline-block;
+        }
+        
+    }
     @include phone{
         .section-why-we{
             margin-top: 40px;
@@ -287,6 +375,11 @@
                 margin: 0 auto;
                 }
         }
+        .section-our-teachers{
+            &__title-text{
+               text-align: center;
+            }
+        }
     }
     @include desktop{
         .section-introductory{
@@ -382,6 +475,11 @@
                 max-width: 393px;
                 margin: 0 auto;
                 }
+        }
+        .section-our-teachers{
+            &__title-text{
+               text-align: center;
+            }
         }
     }
 }

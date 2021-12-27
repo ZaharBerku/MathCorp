@@ -1,6 +1,6 @@
 @mixin style-text-titel {
     font-weight: bold;
-    font-size: 20px;
+    @include adaptiv-font(24,20);
     line-height: $line-height;
     color: $body-secondary-text-color;
 }

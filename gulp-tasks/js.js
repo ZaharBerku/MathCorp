@@ -4,7 +4,7 @@ const rename = require('gulp-rename');
 const fileInclud = require('gulp-file-include');
 
 function distJs() {
-    return gulp.src('src/js/*.js')
+    return gulp.src('src/js/script.js')
     .pipe(rename({ suffix: '.min' }))
     .pipe(fileInclud())
     .pipe(uglify())
