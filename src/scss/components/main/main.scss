@@ -192,7 +192,7 @@
     }
     .section-our-teachers{
         &__wrapper{
-
+            text-align: center
         }
         &__title-text{
             @include style-text-titel;
@@ -205,9 +205,12 @@
             gap: 26px;
             position: relative;
         }
-        &__block-about-teacher:not(:first-child){
+        &__block-about-teacher{
             position: absolute;
             opacity: 0;
+        }
+        &__wrapper-blocks-with-info-teacher{
+            display: inline-block;
         }
         .block-about-teacher--active{
             position: static;
@@ -234,13 +237,10 @@
             font-size: 14px;
             line-height: 121%;
             color: $body-tretiary-color;
+            text-align: left;
         }
         &__grade{
-            background-image: url("../img/main/asterisks.svg");
-            @include style-BG;
-            height: 12px;
-            width: 71px;
-            display: block;
+            @include grade-style;
         }
         &__basic-info{
             display: grid;
@@ -258,6 +258,7 @@
             font-size: 14px;
             line-height: 121%;
             color: $body-primary-text-color;
+            text-align: left;
         }
         
         }
@@ -277,7 +278,59 @@
         .btn-teacher--show{
             display: inline-block;
         }
-        
+        &__block-btn{
+            text-align: center;
+        }
+        &__btn{
+            margin-top: adaptiv-indentation(31, 36, 375);
+            @include style-primary-btn;
+        }
+    }
+    .section-comment{
+        &__wrapper{
+            width: 90%;
+            overflow: hidden;
+        }
+        &__title-text{
+            @include style-text-titel;
+            padding-top: adaptiv-indentation(36, 64, 320);
+            padding-bottom: adaptiv-indentation(15, 57, 320);
+        }
+        &__sliders{
+            width: 200%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(5,328px);
+            gap: 20px;
+        }
+        .slide{
+            max-width: 328px;
+            max-height: 395px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 21px;
+            align-items: center;
+            padding: 27px 33px;
+            box-shadow: 0px 2.02462px 10.1231px rgba(64, 123, 255, 0.2);
+            border-radius: 10px;
+            user-select: none;
+            pointer-events: none;
+            &__img-avatar{
+                width: 64.15px;
+                height: 53.46px;
+            }
+            &__name{
+                font-size: 18px;
+                line-height: 88.8%;
+            }
+            &__grade{
+                @include grade-style;
+            }
+            &__img-comment{
+                width: 261.29px;
+                height: 266.8px;
+            }
+        }
     }
     @include phone{
         .section-why-we{
@@ -287,14 +340,19 @@
             @include style-BG;
             background-position: 80% 20px;
             
+            }
         }
         .section-with-prices{
             &__btn{
                 max-width: 309px;
                 height: 31px;
-             } 
+            } 
         }
-    }
+        .section-our-teachers{
+            &__title-text{
+                text-align: left;
+            }
+        }
     }
     @include tablet{
         .section-introductory{
@@ -376,8 +434,62 @@
                 }
         }
         .section-our-teachers{
+            &__block-about-teacher:nth-child(2){
+                position: static;
+                opacity: 1;
+                justify-self: start;
+            }
+            &__block-about-teacher:nth-child(even){
+                justify-self: start;
+            }
+            &__blocks-with-info-teacher{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: end;
+            }
+        }
+        .section-comment{
+            &__wrapper{
+                width: 90%;
+                overflow: hidden;
+            }
             &__title-text{
-               text-align: center;
+                text-align: center;
+            }
+            &__sliders{
+                width: 200%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(5,328px);
+                gap: 20px;
+            }
+            .slide{
+                max-width: 328px;
+                max-height: 395px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 21px;
+                align-items: center;
+                padding: 27px 33px;
+                box-shadow: 0px 2.02462px 10.1231px rgba(64, 123, 255, 0.2);
+                border-radius: 10px;
+                user-select: none;
+                pointer-events: none;
+                &__img-avatar{
+                    width: 64.15px;
+                    height: 53.46px;
+                }
+                &__name{
+                    font-size: 18px;
+                    line-height: 88.8%;
+                }
+                &__grade{
+                    @include grade-style;
+                }
+                &__img-comment{
+                    width: 261.29px;
+                    height: 266.8px;
+                }
             }
         }
     }
@@ -477,8 +589,58 @@
                 }
         }
         .section-our-teachers{
+            &__block-about-teacher:nth-child(2),
+            &__block-about-teacher:nth-child(3){
+                position: static;
+                opacity: 1;
+            }
+            &__blocks-with-info-teacher{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .section-comment{
+            &__wrapper{
+                width: 90%;
+                overflow: hidden;
+            }
             &__title-text{
                text-align: center;
+            }
+            &__sliders{
+                width: 200%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(5,328px);
+                gap: 20px;
+            }
+            .slide{
+                max-width: 328px;
+                max-height: 395px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 21px;
+                align-items: center;
+                padding: 27px 33px;
+                box-shadow: 0px 2.02462px 10.1231px rgba(64, 123, 255, 0.2);
+                border-radius: 10px;
+                user-select: none;
+                pointer-events: none;
+                &__img-avatar{
+                    width: 64.15px;
+                    height: 53.46px;
+                }
+                &__name{
+                    font-size: 18px;
+                    line-height: 88.8%;
+                }
+                &__grade{
+                    @include grade-style;
+                }
+                &__img-comment{
+                    width: 261.29px;
+                    height: 266.8px;
+                }
             }
         }
     }
