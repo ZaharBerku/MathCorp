@@ -7,6 +7,10 @@
     max-width: 1200px;
     padding: 0px 24px;
     margin: 0 auto;
+    @include desktop{
+        padding: 0px 75px;
+        box-sizing: border-box;
+    }
 }
 body{
     overflow: hidden; 

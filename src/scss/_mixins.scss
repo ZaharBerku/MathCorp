@@ -4,6 +4,13 @@
     line-height: $line-height;
     color: $body-secondary-text-color;
 }
+@mixin style-additional-btn{
+    padding-bottom: 4.5px;
+    border-bottom: 1px solid #084D5B;
+    @include adaptiv-font(16,14);
+    line-height: 171%;
+    color: #084D5B;
+}
 @mixin flex-container {
     display: flex;
     justify-content: center;

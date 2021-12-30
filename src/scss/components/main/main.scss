@@ -4,7 +4,7 @@
         
         &__title-text{
             font-weight: bold;
-            @include adaptiv-font(48,24);
+            font-size: 24px;
             line-height: $line-height;
             color:$body-secondary-text-color;
         }
@@ -266,11 +266,7 @@
             text-align: right;
         }
         &__btn-teacher{
-            padding-bottom: 4.5px;
-            border-bottom: 1px solid #084D5B;
-            font-size: 14px;
-            line-height: 24px;
-            color: #084D5B;
+            @include style-additional-btn;
             margin-top: 26px;
             cursor: pointer;
             display: none;
@@ -287,8 +283,9 @@
         }
     }
     .section-comment{
+        margin-bottom: adaptiv-indentation(46, 64, 320);
         &__wrapper-sliders{
-            width: 90%;
+            width: 100%;
             overflow: hidden;
         }
         &__title-text{
@@ -331,6 +328,13 @@
                 height: 266.8px;
             }
         }
+        &__wrapper-additional-btn{
+            text-align: right;
+        }
+        &__additional-btn{
+            @include style-additional-btn;
+            margin-top: adaptiv-indentation(43, 51, 320);
+        }
     }
     @include phone{
         .section-why-we{
@@ -363,6 +367,9 @@
             }
             &__block-btn{
                 text-align: left
+            }
+            &__title-text{
+                font-size: 36px;
             }
         }
         .section-why-we{
@@ -449,8 +456,8 @@
             }
         }
         .section-comment{
-            &__wrapper{
-                width: 90%;
+            &__wrapper-sliders{
+                width: 100%;
                 overflow: hidden;
             }
             &__title-text{
@@ -499,6 +506,9 @@
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 grid-template-rows: minmax(340px,400px) 78px;
+            }
+            &__title-text{
+                font-size: 48px;
             }
             &__btn{
                max-width: 328px;
@@ -557,28 +567,28 @@
                 flex-direction: column;
              }
              &__block-with-action:nth-child(1){
-                padding-top: adaptiv-indentation(210, 240, 993);
-                padding-right: adaptiv-indentation(10, 170, 700);
+                padding-top: 210px;
+                padding-right: 131px;
              }
              &__block-with-action:nth-child(2){
-                padding-top: adaptiv-indentation(160, 175, 993);
-                padding-right: adaptiv-indentation(10, 75, 700);
+                padding-top: 160px;
+                padding-right: 87px;
              }
              &__block-with-action:nth-child(3){
                 padding-top: 58px;
-                padding-right: adaptiv-indentation(10, 90, 700);
+                padding-right: 149px;
              }
             &__img-info{
-               max-width: adaptiv-indentation(127, 190, 320);
-               max-height: adaptiv-indentation(126, 170, 320);
+               max-width: 127px;
+               max-height: 126px;
             }
             &__dotted-line{
                 display: block;
                 position: absolute;
-                top: adaptiv-indentation(170, 175, 993);
+                top: 125px;
                 left: 3%;
-                max-width: adaptiv-indentation(998, 1200, 993);
-               max-height: adaptiv-indentation(281, 350, 993);
+                max-width: 998px;
+               max-height: 281px;
             }
         }
         .section-with-prices{
@@ -600,8 +610,8 @@
             }
         }
         .section-comment{
-            &__wrapper{
-                width: 90%;
+            &__wrapper-sliders{
+                width: 100%;
                 overflow: hidden;
             }
             &__title-text{
