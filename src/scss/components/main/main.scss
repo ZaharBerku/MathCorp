@@ -297,7 +297,7 @@
             padding-bottom: adaptiv-indentation(15, 57, 320);
         }
         &__sliders{
-            width: 200%;
+            min-width: 1400px;
             height: 100%;
             display: grid;
             grid-template-columns: repeat(5,328px);
@@ -457,7 +457,7 @@
                 text-align: center;
             }
             &__sliders{
-                width: 200%;
+                min-width: 1400px;
                 height: 100%;
                 display: grid;
                 grid-template-columns: repeat(5,328px);
@@ -608,7 +608,7 @@
                text-align: center;
             }
             &__sliders{
-                width: 200%;
+                min-width: 1400px;
                 height: 100%;
                 display: grid;
                 grid-template-columns: repeat(5,328px);
