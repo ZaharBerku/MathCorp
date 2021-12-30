@@ -76,7 +76,7 @@ let endDrag = (event) => {
     }
 
     if ( (x + size)  < (outer.width - inner.width)){
-        wrapperr.style.transform = `translate3d(${outer.width - inner.width}px, 0, 0)`
+        wrapperr.style.transform = `translate3d(${outer.width - inner.width }px, 0, 0)`
         x = 0;
         size = outer.width - inner.width;
     }

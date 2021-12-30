@@ -296,6 +296,7 @@
         &__sliders{
             min-width: 1400px;
             height: 100%;
+            padding: 5px;
             display: grid;
             grid-template-columns: repeat(5,328px);
             gap: 20px;
