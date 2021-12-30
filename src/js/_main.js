@@ -18,7 +18,7 @@ hideTeacherBtn.addEventListener('click', hideTeacherInfo);
 
 
 const wrapperr = document.querySelector('.section-comment__sliders');
-const block = document.querySelector('.section-comment__wrapper');
+const block = document.querySelector('.section-comment__wrapper-sliders');
 const slide = document.querySelectorAll('.section-comment__slide');
 
 
@@ -44,6 +44,7 @@ block.addEventListener('touchstart', startDragTouch)
 
 let draggerMouse = (event) => {
     if (!pressed) return
+    event.preventDefault();
     x = event.clientX - startX;
     wrapperr.style.transform = `translate3d(${x + size}px, 0, 0)`
     checkBoundary()
