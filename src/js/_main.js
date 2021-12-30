@@ -20,7 +20,7 @@ hideTeacherBtn.addEventListener('click', hideTeacherInfo);
 const wrapperr = document.querySelector('.section-comment__sliders');
 const block = document.querySelector('.section-comment__wrapper-sliders');
 const slide = document.querySelectorAll('.section-comment__slide');
-
+const section = document.querySelector('.section-comment')
 
 let x;
 let startX;
@@ -82,8 +82,8 @@ let endDrag = (event) => {
     }
 }
 
-window.addEventListener('mouseup', endDrag)
-window.addEventListener('touchend', endDrag)
+section.addEventListener('mouseup', endDrag)
+section.addEventListener('touchend', endDrag)
 
 function checkBoundary(){
     const inner = wrapperr.getBoundingClientRect();
