@@ -1,0 +1,37 @@
+.footer{
+    padding-bottom: 28px;
+    padding-top: 42px;
+    .section-social-network{
+        @include flex-container;
+        flex-direction: column;
+        gap: adaptiv-indentation(15,28,320);
+        &__icon{
+            width: adaptiv-indentation(57,83,320);
+            height: adaptiv-indentation(57,83,320);
+        }
+        &__text{
+            display: block;
+            font-weight: 500;
+            font-size: adaptiv-indentation(10,16,320);
+            line-height: 118%;
+            color:$body-primary-text-color;
+        }
+        &__block-with-social-network{
+            @include flex-container;
+            gap:40px;
+            margin: 7px 0px;
+        }
+        &__logo{
+            width: adaptiv-indentation(28,51,320);
+            height: adaptiv-indentation(28,51,320);
+        }
+        &__text-rules{
+            font-weight: 300;
+            font-size: adaptiv-indentation(8,10,320);
+            line-height: 12px;
+            color:$body-primary-text-color;
+            @include flex-container;
+            gap: 3px;
+        }
+    }
+}

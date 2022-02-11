@@ -1,2 +1,2 @@
-@@include('_header.js');
-@@include('_main.js');
+@@include('./header/_header.js');
+@@include('./main/_main.js');

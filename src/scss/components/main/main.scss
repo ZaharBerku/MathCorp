@@ -33,15 +33,9 @@
             @include style-primary-btn;
             padding: 12px 0px;
             margin-top: 30px;
-            &:hover{
-                box-shadow: 0px 4px 4px rgba(118, 184, 238, 0.53);
-            }
-            &:active{
-                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-            }
         }
         &__with-img{
-            background-image: url("../img/main/section-introductory-img.jpg");
+            background-image: url("../img/main/section-introductory/section-introductory-img.jpg");
             @include style-BG;
             min-width: 256px;
             min-height: 247px;
@@ -50,7 +44,7 @@
     .section-why-we{
         margin-top: 40px;
     &__background{
-        background-image: url("../img/main/background-section-why-we.png");
+        background-image: url("../img/main/section-why-we/background-section-why-we.png");
         @include style-BG;
     }
     &__title-text{
@@ -105,12 +99,6 @@
         &__btn{
             @include style-primary-btn;
             margin-top: adaptiv-indentation(21, 26, 320);
-            &:hover{
-                box-shadow: 0px 4px 4px rgba(118, 184, 238, 0.53);
-            }
-            &:active{
-                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-            }
         }
         &__dotted-line{
         display: none;
@@ -177,12 +165,6 @@
                border-radius: 5px;
                min-width: adaptiv-indentation(265, 295, 320);
                height: adaptiv-indentation(31, 37, 320);
-               &:hover{
-                box-shadow: 0px 4px 4px rgba(118, 184, 238, 0.53);
-               }
-               &:active{
-                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-               }
             }
         }
         .block-price--height{
@@ -337,6 +319,219 @@
             margin-top: adaptiv-indentation(43, 51, 320);
         }
     }
+    .section-questionnaire{
+        padding-top: adaptiv-indentation(41, 62, 320);
+        &__wrapper{
+            min-height: 614px;
+            @include flex-container;
+            padding-bottom: adaptiv-indentation(40, 66, 320);
+        }
+        &__block-with-girl{
+            @include flex-container;
+            gap: 30px;
+            flex-direction: column;
+            justify-content: end;
+            align-items: flex-end;
+        }
+        .word-bubble{
+            border: 1.5px solid #013D48;
+            width:adaptiv-indentation(300,364, 320);
+            height: 141px;
+            border-radius: 100%;
+            background-color: #fff;
+            @include flex-container;
+            position: relative;
+            .text{
+                width: adaptiv-indentation(259,281, 320);
+                height: 62px;
+                font-size: adaptiv-indentation(14,16, 320);;
+                line-height: $line-height;
+            &__dedicated{
+                color: $body-primary-btn-color;
+                font-weight: 700;
+            }
+            }
+            &:after,
+            &:before {
+                top: 100%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+               }
+            &:after {
+                border-color: rgba(255, 255, 255, 0);
+                border-top-color: #ffffff;
+                border-width: 18px;
+                left: 50%;
+                margin-left: -18px;
+               }
+            &:before {
+                border-color: rgba(125, 145, 133, 0);
+                border-top-color: #013D48;
+                border-width: 19px;
+                left: 50%;
+                margin-left: -19px;
+            }
+        }
+        &__img{
+            max-width: adaptiv-indentation(150, 233, 320);
+            max-height: adaptiv-indentation(153, 236, 320);
+            position: relative;
+            z-index: 2; 
+        }
+        .form{
+            width: adaptiv-indentation(280, 340, 320);
+            background-color: #fff;
+            margin: 0 70px;
+            padding: 46px 19px 15px;
+            box-sizing: border-box;
+            box-shadow: 0px 2px 10px rgba(64, 123, 255, 0.2);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            margin-top: 160px;
+            &__input{
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid $body-primary-btn-color;
+                box-sizing: border-box;
+                margin-top: 8px;
+                padding: 0px 9px;
+                font-size: 14px;
+                line-height: 19px;
+                color: $body-primary-text-color;
+                &::placeholder{
+                    font-size: 14px;
+                    line-height: 19px;
+                    color: #C4C4C4;
+                }
+            }
+            .input--radio{
+                margin-top: 0px;
+            }
+            .div--input{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0px 9px;
+                position: relative;
+                z-index: 10;
+                background-color: #fff;
+            }
+            &__label{
+                font-weight: 500;
+                font-size: 0.875rem;
+                line-height: 17px;
+                color:$main-questionnaire-text;
+                margin-top: 18px;
+                display: block;
+            }
+            .label--radio{
+                box-shadow: 0px 2px 4px rgba(224, 224, 224, 0.7);
+                border-radius: 14px;
+                padding: 15px 35px;
+                position: relative;
+                z-index: 10;
+                margin-top: 0px;
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 14px;
+                    height: 14px;
+                    border: 1px solid $body-primary-btn-color;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top:50%;
+                    left: 0px;
+                    transform:translate(60%, -55%);
+                    z-index: 1;
+                    transition: linear, border .1s linear;
+                    
+                  }
+                  &::after{
+                    content: '';
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    background-color: $body-primary-btn-color;
+                    border-radius: 50%;
+                    position: absolute;
+                    top:50%;
+                    left: 0px;
+                    transform:translate(68%, -55%);
+                    z-index: 2;
+                    opacity: 0;
+                  } 
+            }
+            .input--radio:checked + .label--radio::before{
+                border-color: $body-primary-btn-color;
+              }
+            .input--radio:checked + .label--radio::after{
+                opacity: 1;
+            }
+            #select{
+                position: relative;
+                &.open{
+                    .form__dropdown{
+                        margin-top: 20px;
+                        top: 0px;
+                        max-height: 200px;
+                        padding-bottom: 20px;
+                        box-sizing: border-box;
+                        z-index: 0;
+                    }
+                }
+            }
+            &__dropdown{
+                position: absolute;
+                top: 0px;
+                left: 0;
+                right: 0;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                margin-top: 0px;
+                max-height: 0px;
+                position: relative;
+                overflow-y:auto;
+                transition: 700ms;
+                z-index: 0;
+                &::-webkit-scrollbar{
+                    width: 0;
+                  }
+            }
+            .fas{
+                transition: 500ms;
+                color: #C4C4C4;
+            }
+            &__value{
+                border: none;
+                font-size: 14px;
+                line-height: 19px;
+                color: $body-primary-text-color;
+                width: 55px;
+                &::placeholder{
+                    font-size: 14px;
+                    line-height: 19px;
+                    color: #C4C4C4;
+                }
+            }
+            &__arrow{
+              transform: rotate(-90deg);
+            }
+            &__btn{
+                @include style-primary-btn;
+                background-color: #8B969C;
+                margin-top:32px;
+            }
+        }
+    }
     @include phone{
         .section-why-we{
             margin-top: 40px;
@@ -356,6 +551,22 @@
         .section-our-teachers{
             &__title-text{
                 text-align: left;
+            }
+        }
+        .section-questionnaire{
+            &__wrapper{
+                @include flex-container;
+                flex-direction: column;
+            }
+            &__block-with-girl{
+                @include flex-container;
+                flex-direction: column;
+                gap: 24px;
+                align-self: center;
+            }
+            .form{
+                margin-top: adaptiv-indentation(-24, -27, 320);
+                align-self:center;
             }
         }
     }
@@ -498,6 +709,22 @@
                     width: 261.29px;
                     height: 266.8px;
                 }
+            }
+        }
+        .section-questionnaire{
+            &__wrapper{
+                @include flex-container;
+                flex-direction: column;
+            }
+            &__block-with-girl{
+                @include flex-container;
+                flex-direction: column;
+                gap: 24px;
+                align-self:center;
+            }
+            .form{
+                margin-top: adaptiv-indentation(-27, -33, 320);
+                align-self:center;
             }
         }
     }
@@ -653,6 +880,9 @@
                     height: 266.8px;
                 }
             }
+        }
+        .section-questionnaire{
+            background-color: #DEF2FF;
         }
     }
 }
